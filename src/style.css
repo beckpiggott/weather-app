@@ -1,0 +1,57 @@
+h1 {
+  color: #429c99;
+  font-weight: bold;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+}
+
+h2,
+h4,
+p {
+  color: gray;
+}
+i {
+  color: #429c99;
+  font-size: 50px;
+  padding: 20px;
+}
+.container {
+  margin: 40px;
+}
+
+.btn-primary {
+  background-color: #429c99;
+  border-color: #429c99;
+}
+.btn-primary:hover {
+  background-color: #198583;
+  border-color: #198583;
+}
+
+.cloud {
+  font-size: 150px;
+  color: #198583;
+  margin-left: 25px;
+}
+.row {
+  padding: 20px;
+}
+.col-2 {
+  margin-left: 50px;
+}
+
+.temperature {
+  font-size: 60px;
+  font-weight: bold;
+  color: gray;
+}
+
+.weather {
+  text-align: center;
+  margin-top: 55px;
+}
+.weekday {
+  text-align: center;
+}
