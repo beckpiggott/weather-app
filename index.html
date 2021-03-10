@@ -18,13 +18,13 @@
     <div class="container">
 
         <form class="row g-3" id="search-form">
-            <div class="col-5">
+            <div class="col-6">
                 <input type="text" class="form-control" id="inputPassword2" placeholder="Enter a city...">
             </div>
-            <div class="col-2">
+            <div class="col-3">
                 <button type="submit" class="btn btn-primary mb-3">Search</button>
             </div>
-            <div class="col-2">
+            <div class="col-3">
                 <button type="submit" class="btn btn-primary mb-3" id="currentLocation">Current</button>
             </div>
         </form>
@@ -43,10 +43,10 @@
                 <p id="current-time">
                     Time </br>
                 </p>
-                <h4 id="description">
+                <h4 class="description" id="description">
                 </h4>
                 <span class="temperature" id="temp"></span>
-                <span class="Units">
+                <span class="units">
                     <a href="#" id="celsius-link"><sup>°C</sup></a> |
                     <a href="#" id="farenheit-link"><sup>°F</sup></a>
                 </span>
@@ -54,7 +54,7 @@
 
             <div class="col-4 weather">
                 <p>Humidity | <strong id="humidity"></strong><strong>%</strong></p>
-                <p>Wind | <strong id="windSpeed"></strong><strong>m/h</strong></P>
+                <p>Wind | <strong id="windSpeed"></strong><strong>km/h</strong></P>
             </div>
         </div>
 
@@ -93,10 +93,17 @@
             </br>
             23°c
            </div>
+
+          <div class="col-2">
+            Sat </br>
+            <i class="fas fa-sun"></i>
+            </br>
+            22°c
+          </div>
        </div>
     </div>  
    </br>
-    <footer><a href="https://github.com/beckpiggott/weather-app">Open-souce code</a> by Beck Piggott</footer>
+    <footer><a href="https://github.com/beckpiggott/weather-app" target="_blank">Open-souce code</a> by Beck Piggott</footer>
 
 
 
