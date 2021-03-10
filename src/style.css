@@ -1,64 +1,84 @@
 h1 {
-  color: #429c99;
+  color: #364a5d;
   font-weight: bold;
+  font-size: 60px;
+  margin-bottom: 16px;
 }
 
 body {
   font-family: "Raleway", sans-serif;
   padding: 20px;
-  margin: 70px;
+  margin: 70 auto;
 }
 
 h2,
 h4,
 p {
-  color: gray;
+  color: #fff;
 }
 i {
-  color: #429c99;
-  font-size: 50px;
-  padding: 20px;
-}
-.container {
-  margin: auto;
-  border: solid 1px;
-  border-radius: 20px;
-  border-color: gray;
-  padding: 20px;
+  color: #364a5d;
+  font-size: 40px;
 }
 
+footer {
+  text-align: center;
+}
+.container {
+  margin: 0 auto;
+  border: solid 1px;
+  border-radius: 10px;
+  border-color: #364a5d;
+  padding: 0;
+  max-width: 800px;
+  background-color: #b2bbbf;
+}
 .btn-primary {
-  background-color: #429c99;
-  border-color: #429c99;
+  background-color: #364a5d;
+  border-color: #364a5d;
   width: 150px;
 }
 .btn-primary:hover {
-  background-color: #198583;
-  border-color: #198583;
+  background-color: #1f2b36;
+  border-color: #1f2b36;
 }
-
 .cloud {
   font-size: 120px;
-  color: #198583;
-  margin-left: 50px;
+  color: #364a5d;
+  padding: 12px;
+  float: right;
 }
 .row {
   padding: 20px;
 }
-.col-2 {
-  margin-left: 30px;
-}
+
 .temperature {
   font-size: 60px;
   font-weight: bold;
-  color: gray;
+  color: #364a5d;
 }
 
 .weather {
-  text-align: center;
-  margin-top: 55px;
+  margin-top: 89px;
 }
 .weekday {
   text-align: center;
   margin: 0 auto;
+  background-color: #fff;
+  border: solid #fff;
+  border-radius: 10px;
+}
+
+.description {
+  font-weight: bold;
+}
+
+.col-6 {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.units {
+  position: relative;
+  top: -22px;
 }
