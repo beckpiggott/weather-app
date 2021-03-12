@@ -33,6 +33,7 @@ function showTemperature(response) {
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#cityName").innerHTML = response.data.name;
   
+  celsiusTemperature = response.data.main.temp;
 
   let weatherIcon = document.querySelector("#weatherIcon");
   weatherIcon.setAttribute("src", `http://openweathermap.org/img/wn/${ response.data.weather[0].icon}@2x.png`);
@@ -69,12 +70,32 @@ function getCurrentWeather(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
+
+function showFarenheitTemperature(event) {
+  event.preventDefault();
+  let farenheitTemperature = (celsiusTemperature * 9)/ 5 + 32;
+  let temperature = document.querySelector("#temp");
+  temperature.innerHTML = Math.round(farenheitTemperature);
+}
+
+function showCelsiusTemperature(event) {
+  event.preventDefault();
+  let temperature = document.querySelector("#temp");
+  temperature.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
-searchCity("Sydney"); 
+let farenheitLink = document.querySelector("#farenheit-link");
+farenheitLink.addEventListener("click", showFarenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsiusTemperature);
 
 let currentLocation = document.querySelector("#currentLocation");
 currentLocation.addEventListener("click", getCurrentWeather);
 
-
+searchCity("Sydney"); 
