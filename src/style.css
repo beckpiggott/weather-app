@@ -30,7 +30,7 @@ footer {
   border-radius: 10px;
   border-color: #364a5d;
   padding: 0;
-  max-width: 800px;
+  max-width: 700px;
   background-color: #b2bbbf;
 }
 .btn-primary {
@@ -42,9 +42,8 @@ footer {
   background-color: #1f2b36;
   border-color: #1f2b36;
 }
-.cloud {
-  font-size: 120px;
-  color: #364a5d;
+.icon {
+  width: 80%;
   padding: 12px;
   float: right;
 }
@@ -72,9 +71,12 @@ footer {
 .description {
   font-weight: bold;
 }
+.description:first-letter {
+  text-transform: capitalize;
+}
 
 .col-6 {
-  padding-left: 30px;
+  padding-left: 20px;
   padding-right: 30px;
 }
 
