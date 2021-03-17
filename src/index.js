@@ -22,10 +22,21 @@ let month = months[todaysDate.getMonth()];
 currentDate.innerHTML = `${day} ${date} ${month}`;
 currentTime.innerHTML = `${hours}:${minutes}`;
 
+function formatHours(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if(hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if(minutes <10) {
+    minutes = `0${minutes}`;
+  }
 
+  return `${hours}:${minutes}`;
+}
 
 function showTemperature(response) {
-  console.log(response.data.weather[0]);
 
   document.querySelector("#temp").innerHTML = Math.round(response.data.main.temp);
   document.querySelector("#windSpeed").innerHTML = Math.round(response.data.wind.speed);
@@ -40,12 +51,86 @@ function showTemperature(response) {
   weatherIcon.setAttribute("alt", response.data.weather[0].description);
 }
 
+function showForecast(response) {
+  let forecast = document.querySelector("#forecast");
+  let hourlyForecast = response.data.list[0];
+  console.log(hourlyForecast);
+
+    forecast.innerHTML = `
+           <div class="col-2">
+            ${formatHours(hourlyForecast.dt * 1000)};
+            </br>
+            <img src="http://openweathermap.org/img/wn/${hourlyForecast.weather[0].icon}@2x.png">
+            </br>
+            ${Math.round(hourlyForecast.main.temp_max)}°c
+           </div>
+           `
+
+  hourlyForecast = response.data.list[1];
+    forecast.innerHTML += `
+           <div class="col-2">
+            ${formatHours(hourlyForecast.dt * 1000)};
+            </br>
+            <img src="http://openweathermap.org/img/wn/${hourlyForecast.weather[0].icon}@2x.png">
+            </br>
+            ${Math.round(hourlyForecast.main.temp_max)}°c
+           </div>
+           `
+
+hourlyForecast = response.data.list[2];
+    forecast.innerHTML += `
+           <div class="col-2">
+            ${formatHours(hourlyForecast.dt * 1000)};
+            </br>
+            <img src="http://openweathermap.org/img/wn/${hourlyForecast.weather[0].icon}@2x.png">
+            </br>
+            ${Math.round(hourlyForecast.main.temp_max)}°c
+           </div>
+           `
+
+  hourlyForecast = response.data.list[3];
+    forecast.innerHTML += `
+           <div class="col-2">
+            ${formatHours(hourlyForecast.dt * 1000)};
+            </br>
+            <img src="http://openweathermap.org/img/wn/${hourlyForecast.weather[0].icon}@2x.png">
+            </br>
+            ${Math.round(hourlyForecast.main.temp_max)}°c
+           </div>
+           ` 
+           
+  hourlyForecast = response.data.list[4];
+    forecast.innerHTML += `
+           <div class="col-2">
+            ${formatHours(hourlyForecast.dt * 1000)};
+            </br>
+            <img src="http://openweathermap.org/img/wn/${hourlyForecast.weather[0].icon}@2x.png">
+            </br>
+            ${Math.round(hourlyForecast.main.temp_max)}°c
+           </div>
+           `   
+           
+ hourlyForecast = response.data.list[5];
+    forecast.innerHTML += `
+           <div class="col-2">
+            ${formatHours(hourlyForecast.dt * 1000)};
+            </br>
+            <img src="http://openweathermap.org/img/wn/${hourlyForecast.weather[0].icon}@2x.png">
+            </br>
+            ${Math.round(hourlyForecast.main.temp_max)}°c
+           </div>
+           `           
+}
+
 function searchCity(city) {
    let apiKey = "d5d9b9ab70b425b5936beab173bca281";
    let units= "metric";
    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
 
    axios.get(apiUrl).then(showTemperature);
+
+   apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${units}`;
+   axios.get(apiUrl).then(showForecast);
 }
 
 
