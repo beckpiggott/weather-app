@@ -28,12 +28,12 @@ function formatHours(timestamp) {
   if(hours < 10) {
     hours = `0${hours}`;
   }
-  let minutes = date.getMinutes();
-  if(minutes <10) {
+  let minutes = date.getMinutes()
+  if(minutes < 10) {
     minutes = `0${minutes}`;
   }
 
-  return `${hours}:${minutes}`;
+  return `${hours}:${minutes}`
 }
 
 function showTemperature(response) {
@@ -145,9 +145,12 @@ function searchLocation(position) {
   let apiKey = "d5d9b9ab70b425b5936beab173bca281";
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
-  let units = "metric";
+  let units = "metric"; 
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showTemperature);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
+   axios.get(apiUrl).then(showForecast);
 }
 
 function getCurrentWeather(event) {
