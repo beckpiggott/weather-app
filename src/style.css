@@ -30,13 +30,14 @@ footer {
   border-radius: 10px;
   border-color: #364a5d;
   padding: 0;
-  max-width: 700px;
+  max-width: 600px;
   background-color: #b2bbbf;
+  background-image: url(https://unsplash.com/photos/xJ2tjuUHD9M);
 }
 .btn-primary {
   background-color: #364a5d;
   border-color: #364a5d;
-  width: 150px;
+  width: 100px;
 }
 .btn-primary:hover {
   background-color: #1f2b36;

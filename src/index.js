@@ -22,6 +22,7 @@ let month = months[todaysDate.getMonth()];
 currentDate.innerHTML = `${day} ${date} ${month}`;
 currentTime.innerHTML = `${hours}:${minutes}`;
 
+
 function formatHours(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
@@ -187,3 +188,4 @@ let currentLocation = document.querySelector("#currentLocation");
 currentLocation.addEventListener("click", getCurrentWeather);
 
 searchCity("Sydney"); 
+
