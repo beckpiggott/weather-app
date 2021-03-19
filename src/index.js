@@ -34,7 +34,7 @@ function formatHours(timestamp) {
     minutes = `0${minutes}`;
   }
 
-  return `${hours}:${minutes}`
+  return `${hours}:${minutes}`;
 }
 
 function showTemperature(response) {
@@ -55,7 +55,7 @@ function showTemperature(response) {
 function showForecast(response) {
   let forecast = document.querySelector("#forecast");
   let hourlyForecast = response.data.list[0];
-  console.log(hourlyForecast);
+  
 
     forecast.innerHTML = `
            <div class="col-2">
